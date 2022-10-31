@@ -1,4 +1,4 @@
-package bank;
+package thread.question.bank;
 
 /*
  練習.

@@ -1,10 +1,8 @@
-package bankAnswer;
+package thread.question.bankAnswer;
 
 /*
  練習的建議答案.
  */
-
-import java.util.ArrayList;
 
 public class BankAccount {
 

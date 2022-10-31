@@ -1,3 +1,5 @@
+package thread;
+
 import java.util.ArrayList;
 
 // put buffer thread
@@ -51,7 +53,7 @@ public class Buffer {
 
   public synchronized void put(int i) throws InterruptedException {
 
-    // Buffer size = 10, wait, until the get method remove an item from buffer
+    // thread.Buffer size = 10, wait, until the get method remove an item from buffer
     while (elem.size()==10) {
       System.out.print("Full ");
       wait();

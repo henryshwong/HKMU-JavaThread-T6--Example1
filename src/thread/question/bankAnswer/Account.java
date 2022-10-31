@@ -1,4 +1,4 @@
-package bankAnswer;
+package thread.question.bankAnswer;
 
 // answer 1. Account object.
 public class Account {
