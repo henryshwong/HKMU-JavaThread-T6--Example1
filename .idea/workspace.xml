@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64d02c96-5eab-471b-b10c-d2155ea4b6b7" name="Changes" comment="2">
-      <change afterPath="$PROJECT_DIR$/src/defineclass/ClassExamples.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defineclass/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defineclass/Desktop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defineclass/Notebook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/defineclass/people.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/synctest/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/synctest/DepositThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thread/synctest/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/JavaSyntax.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/Buffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bank/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bankAnswer/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bankAnswer/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bankAnswer/DepositThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/DepositThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bankAnswer/WithDrawThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/WithDrawThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/Buffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/question/bank/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/question/bankAnswer/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/question/bankAnswer/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/question/bankAnswer/DepositThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bankAnswer/DepositThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/synctest/DepositThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/synctest/DepositThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +51,7 @@
       <recent name="thread" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.JavaSyntax">
     <configuration name="ArrayListReview" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.ArrayListReview" />
       <module name="HKMU JavaThread T6 Example 1" />
@@ -99,9 +92,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Buffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.Buffer" />
+    <configuration name="JavaSyntax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.question.bankAnswer.JavaSyntax" />
       <module name="HKMU JavaThread T6 Example 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.question.bankAnswer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JavaSyntax" />
+        <item itemvalue="Application.Buffer" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.BankAccount" />
-        <item itemvalue="Application.Buffer" />
         <item itemvalue="Application.ArrayListReview" />
-        <item itemvalue="Application.Buffer (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +136,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667180074632</updated>
-      <workItem from="1667180077181" duration="22218000" />
+      <workItem from="1667180077181" duration="32705000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1667180208086</created>
@@ -153,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667204636644</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2">
+      <created>1667207878174</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667207878174</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

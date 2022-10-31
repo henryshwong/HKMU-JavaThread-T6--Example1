@@ -9,11 +9,12 @@ public class BankAccount {
     public static void main(String[] args) {
         Account account = new Account();
 
-        DepositThread depositThread = new DepositThread(account);
-        WithDrawThread withDrawThread = new WithDrawThread(account);
+        Thread depositThread = new DepositThread(account);
+        Thread withDrawThread = new WithDrawThread(account);
 
         depositThread.start();
         withDrawThread.start();
+
 
         // join() will wait for the thread end
         try {

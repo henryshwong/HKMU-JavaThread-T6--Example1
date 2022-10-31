@@ -9,7 +9,7 @@ public class Account {
     }
 
     public void deposit(int amt){
-        balance+=amt;
+        balance += amt;
     }
 
     public void withDraw(int amt){
@@ -19,4 +19,5 @@ public class Account {
     public int getBalance() {
         return balance;
     }
+
 }

@@ -30,6 +30,7 @@ public class DepositThread extends Thread {
         for (int x = 1; x<=TIMES; x++){
 
             synchronized (account) {
+
                 while (account.getBalance() >= 10) {
 
                     try {

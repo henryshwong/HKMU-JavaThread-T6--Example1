@@ -15,11 +15,11 @@ public class DepositThread extends Thread{
     public void run(){
 
 
-        synchronized (bankAccount){
-            bankAccount.deposit(1);
-        }
+//        synchronized (bankAccount){
+//            bankAccount.deposit(1);
+//        }
 
         // Try without synchronized
-        // bankAccount.deposit(1);
+         bankAccount.deposit(1);
     }
 }

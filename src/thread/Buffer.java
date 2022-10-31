@@ -87,11 +87,11 @@ public class Buffer {
 
     for(int x=0; x<=TEST_BUFFER; x++){
       PutBuffer putBuffer = new PutBuffer(buffer);
-      putBuffer.setPriority(Thread.MIN_PRIORITY);
+      putBuffer.setPriority(Thread.NORM_PRIORITY);
       putBuffer.start();
 
       GetBuffer getBuffer = new GetBuffer(buffer);
-      getBuffer.setPriority(Thread.MAX_PRIORITY);
+      getBuffer.setPriority(Thread.NORM_PRIORITY);
       getBuffer.start();
     }
 
