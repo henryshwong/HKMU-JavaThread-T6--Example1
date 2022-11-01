@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64d02c96-5eab-471b-b10c-d2155ea4b6b7" name="Changes" comment="2">
-      <change afterPath="$PROJECT_DIR$/src/people/PeopleClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Notes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/basic/ArrayPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/basic/BasicJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/basic/BasicJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/question/bank/DepositThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/DepositThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/question/bank/RunThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/RunThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/question/bank/WithDrawThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/WithDrawThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Gsb7kxB26eiJvqgiC5eoTNpd11" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -35,19 +43,19 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/henrywong/IdeaProjects/HKMU-JavaThread-T6--Example1&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="basic" />
       <recent name="thread.question" />
       <recent name="thread" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JavaSyntax">
-    <configuration name="ArrayListReview" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="basic.ArrayListReview" />
+  <component name="RunManager" selected="Application.ArrayPlay">
+    <configuration name="ArrayPlay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="basic.ArrayPlay" />
       <module name="HKMU JavaThread T6 Example 1" />
       <extension name="coverage">
         <pattern>
@@ -72,9 +80,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Buffer (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Buffer" />
+    <configuration name="BasicJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="basic.BasicJava" />
       <module name="HKMU JavaThread T6 Example 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="basic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,19 +96,6 @@
     <configuration name="Buffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="thread.Buffer" />
       <module name="HKMU JavaThread T6 Example 1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JavaSyntax" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="thread.question.bankAnswer.JavaSyntax" />
-      <module name="HKMU JavaThread T6 Example 1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="thread.question.bankAnswer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -112,13 +113,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RunThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="thread.question.bank.RunThread" />
+      <module name="HKMU JavaThread T6 Example 1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="thread.question.bank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JavaSyntax" />
-        <item itemvalue="Application.Buffer" />
+        <item itemvalue="Application.ArrayPlay" />
+        <item itemvalue="Application.BasicJava" />
+        <item itemvalue="Application.RunThread" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.BankAccount" />
-        <item itemvalue="Application.ArrayListReview" />
       </list>
     </recent_temporary>
   </component>
@@ -130,9 +144,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667180074632</updated>
-      <workItem from="1667180077181" duration="32705000" />
-      <workItem from="1667235535333" duration="2162000" />
-      <workItem from="1667268008833" duration="925000" />
+      <workItem from="1667180077181" duration="22218000" />
+      <workItem from="1667219962534" duration="199000" />
+      <workItem from="1667220379539" duration="7051000" />
+      <workItem from="1667268133588" duration="3751000" />
+      <workItem from="1667275261709" duration="1734000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1667180208086</created>
@@ -149,34 +165,13 @@
       <updated>1667204636644</updated>
     </task>
     <task id="LOCAL-00003" summary="2">
-      <created>1667207878174</created>
+      <created>1667227325850</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1667207878174</updated>
+      <updated>1667227325850</updated>
     </task>
-    <task id="LOCAL-00004" summary="2">
-      <created>1667235548686</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1667235548686</updated>
-    </task>
-    <task id="LOCAL-00005" summary="2">
-      <created>1667237703954</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1667237703954</updated>
-    </task>
-    <task id="LOCAL-00006" summary="2">
-      <created>1667268076306</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1667268076306</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

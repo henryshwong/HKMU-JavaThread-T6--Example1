@@ -2,13 +2,21 @@ package thread.question.bank;
 
 public class RunThread {
 
-    private static void main(String[] args){
+    public static void main(String[] args) {
         Acount acount ;
         acount = new Acount();
-        Thread depositthead = new DepositThread(acount);
-        Thread withdrawtheard = new WithDrawThread(acount);
+        DepositThread depositthead = new DepositThread(acount);
+        WithDrawThread withdrawtheard = new WithDrawThread(acount);
 
-        depositthead.start();
-        withdrawtheard.start();
+      depositthead.start();
+      withdrawtheard.start();
+
+      for (int x=1;x<=1000;x++){
+
+      }
+
+        System.out.println("account " + acount.getBalance());
     }
+
+
 }
