@@ -1,0 +1,233 @@
+Index: src/thread/question/bank/RunThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package thread.question.bank;\n\npublic class RunThread {\n\n    private static void main(String[] args){\n        Acount acount ;\n        acount = new Acount();\n        Thread depositthead = new DepositThread(acount);\n        Thread withdrawtheard = new WithDrawThread(acount);\n\n        depositthead.start();\n        withdrawtheard.start();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/thread/question/bank/RunThread.java b/src/thread/question/bank/RunThread.java
+--- a/src/thread/question/bank/RunThread.java	(revision e3aaf2c76e013420aef983f84a7a6294bd17cdd7)
++++ b/src/thread/question/bank/RunThread.java	(date 1667228502664)
+@@ -2,13 +2,21 @@
+ 
+ public class RunThread {
+ 
+-    private static void main(String[] args){
++    public static void main(String[] args) {
+         Acount acount ;
+         acount = new Acount();
+-        Thread depositthead = new DepositThread(acount);
+-        Thread withdrawtheard = new WithDrawThread(acount);
++        DepositThread depositthead = new DepositThread(acount);
++        WithDrawThread withdrawtheard = new WithDrawThread(acount);
+ 
+-        depositthead.start();
+-        withdrawtheard.start();
++      depositthead.start();
++      withdrawtheard.start();
++
++      for (int x=1;x<=1000;x++){
++
++      }
++
++        System.out.println("account " + acount.getBalance());
+     }
++
++
+ }
+Index: src/thread/question/bank/WithDrawThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package thread.question.bank;\n\npublic class WithDrawThread {\n    private Acount acount;\n    public WithDrawThread(Acount acount){\n        this.acount = acount;\n    }\n    public void run() {\n        synchronized (acount) {\n            acount.widthDraw(1);\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/thread/question/bank/WithDrawThread.java b/src/thread/question/bank/WithDrawThread.java
+--- a/src/thread/question/bank/WithDrawThread.java	(revision e3aaf2c76e013420aef983f84a7a6294bd17cdd7)
++++ b/src/thread/question/bank/WithDrawThread.java	(date 1667229136965)
+@@ -1,13 +1,29 @@
+ package thread.question.bank;
+ 
+-public class WithDrawThread {
++public class WithDrawThread extends Thread{
+     private Acount acount;
+     public WithDrawThread(Acount acount){
+         this.acount = acount;
+     }
+     public void run() {
+-        synchronized (acount) {
+-            acount.widthDraw(1);
++
++        for (int x = 0; x<10000; x++){
++            synchronized (acount) {
++
++                while (acount.getBalance() <= 0){
++                    try {
++                        acount.wait();
++                    } catch (InterruptedException e) {
++                        throw new RuntimeException(e);
++                    }
++                }
++
++                acount.widthDraw(1);
++                acount.notifyAll();
++            }
+         }
++
++
++
+     }
+ }
+Index: src/thread/question/bank/DepositThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package thread.question.bank;\n\npublic class DepositThread {\n    private Acount acount;\n\n    public DepositThread(Acount acount){\n        this.acount = acount;\n    }\n\n    public void run(){\n        synchronized (acount){\n            acount.deposit(1);\n        }\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/thread/question/bank/DepositThread.java b/src/thread/question/bank/DepositThread.java
+--- a/src/thread/question/bank/DepositThread.java	(revision e3aaf2c76e013420aef983f84a7a6294bd17cdd7)
++++ b/src/thread/question/bank/DepositThread.java	(date 1667228688357)
+@@ -1,6 +1,6 @@
+ package thread.question.bank;
+ 
+-public class DepositThread {
++public class DepositThread extends Thread{
+     private Acount acount;
+ 
+     public DepositThread(Acount acount){
+@@ -8,6 +8,25 @@
+     }
+ 
+     public void run(){
++
++        for (int x=1;x<=10000;x++){
++            synchronized (acount){
++                while (acount.getBalance() >=10){
++                    try {
++                        acount.wait();
++                    } catch (InterruptedException e) {
++                        throw new RuntimeException(e);
++                    }
++                }
++                acount.deposit(1);
++                acount.notifyAll();
++            }
++
++        }
++
++
++
++
+         synchronized (acount){
+             acount.deposit(1);
+         }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"64d02c96-5eab-471b-b10c-d2155ea4b6b7\" name=\"Changes\" comment=\"2\">\n      <change afterPath=\"$PROJECT_DIR$/src/thread/question/bank/Acount.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/thread/question/bank/DepositThread.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/thread/question/bank/RunThread.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/thread/question/bank/WithDrawThread.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2Gsb7kxB26eiJvqgiC5eoTNpd11\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\n    \"WebServerToolWindowFactoryState\": \"false\",\n    \"last_opened_file_path\": \"/Users/henrywong/IdeaProjects/HKMU-JavaThread-T6--Example1\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"thread.question\" />\n      <recent name=\"thread\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Application.Main\">\n    <configuration name=\"ArrayListReview\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"thread.ArrayListReview\" />\n      <module name=\"HKMU JavaThread T6 Example 1\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"thread.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"BankAccount\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"thread.question.bankAnswer.BankAccount\" />\n      <module name=\"HKMU JavaThread T6 Example 1\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"thread.question.bankAnswer.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Buffer (2)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"Buffer\" />\n      <module name=\"HKMU JavaThread T6 Example 1\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Buffer\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"thread.Buffer\" />\n      <module name=\"HKMU JavaThread T6 Example 1\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Buffer\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"thread.Buffer\" />\n      <module name=\"HKMU JavaThread T6 Example 1\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"thread.synctest.Main\" />\n      <module name=\"HKMU JavaThread T6 Example 1\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"thread.synctest.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n        <item itemvalue=\"Application.BankAccount\" />\n        <item itemvalue=\"Application.Buffer\" />\n        <item itemvalue=\"Application.ArrayListReview\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"64d02c96-5eab-471b-b10c-d2155ea4b6b7\" name=\"Changes\" comment=\"\" />\n      <created>1667180074632</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1667180074632</updated>\n      <workItem from=\"1667180077181\" duration=\"22218000\" />\n      <workItem from=\"1667219962534\" duration=\"199000\" />\n      <workItem from=\"1667220379539\" duration=\"4965000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"1\">\n      <created>1667180208086</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1667180208086</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"2\">\n      <created>1667204636644</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1667204636644</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"1\" />\n    <MESSAGE value=\"2\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"2\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/thread/Buffer.java</url>\n          <line>3</line>\n          <option name=\"timeStamp\" value=\"1\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/thread/Syntax.java</url>\n          <line>32</line>\n          <option name=\"timeStamp\" value=\"2\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\n          <url>file://$PROJECT_DIR$/src/thread/question/bankAnswer/WithDrawThread.java</url>\n          <line>46</line>\n          <option name=\"timeStamp\" value=\"3\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e3aaf2c76e013420aef983f84a7a6294bd17cdd7)
++++ b/.idea/workspace.xml	(date 1667229403314)
+@@ -2,11 +2,10 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="64d02c96-5eab-471b-b10c-d2155ea4b6b7" name="Changes" comment="2">
+-      <change afterPath="$PROJECT_DIR$/src/thread/question/bank/Acount.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/thread/question/bank/DepositThread.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/thread/question/bank/RunThread.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/thread/question/bank/WithDrawThread.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/thread/question/bank/DepositThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/DepositThread.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/thread/question/bank/RunThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/RunThread.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/thread/question/bank/WithDrawThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/question/bank/WithDrawThread.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -49,7 +48,7 @@
+       <recent name="thread" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.Main">
++  <component name="RunManager" selected="Application.RunThread">
+     <configuration name="ArrayListReview" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="thread.ArrayListReview" />
+       <module name="HKMU JavaThread T6 Example 1" />
+@@ -76,8 +75,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Buffer (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="Buffer" />
++    <configuration name="Buffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="thread.Buffer" />
+       <module name="HKMU JavaThread T6 Example 1" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -90,19 +89,25 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Buffer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="thread.Buffer" />
++    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="thread.synctest.Main" />
+       <module name="HKMU JavaThread T6 Example 1" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="thread.synctest.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="thread.synctest.Main" />
++    <configuration name="RunThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="thread.question.bank.RunThread" />
+       <module name="HKMU JavaThread T6 Example 1" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="thread.synctest.*" />
++          <option name="PATTERN" value="thread.question.bank.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -112,6 +117,7 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.RunThread" />
+         <item itemvalue="Application.Main" />
+         <item itemvalue="Application.BankAccount" />
+         <item itemvalue="Application.Buffer" />
+@@ -129,7 +135,7 @@
+       <updated>1667180074632</updated>
+       <workItem from="1667180077181" duration="22218000" />
+       <workItem from="1667219962534" duration="199000" />
+-      <workItem from="1667220379539" duration="4965000" />
++      <workItem from="1667220379539" duration="7051000" />
+     </task>
+     <task id="LOCAL-00001" summary="1">
+       <created>1667180208086</created>
+@@ -145,7 +151,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1667204636644</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="2">
++      <created>1667227325850</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1667227325850</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
