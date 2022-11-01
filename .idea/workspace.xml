@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64d02c96-5eab-471b-b10c-d2155ea4b6b7" name="Changes" comment="2" />
+    <list default="true" id="64d02c96-5eab-471b-b10c-d2155ea4b6b7" name="Changes" comment="2">
+      <change afterPath="$PROJECT_DIR$/src/people/PeopleClass.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,6 +132,7 @@
       <updated>1667180074632</updated>
       <workItem from="1667180077181" duration="32705000" />
       <workItem from="1667235535333" duration="2162000" />
+      <workItem from="1667268008833" duration="925000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1667180208086</created>
@@ -166,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667237703954</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2">
+      <created>1667268076306</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667268076306</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
