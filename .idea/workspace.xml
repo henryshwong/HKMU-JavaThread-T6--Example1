@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64d02c96-5eab-471b-b10c-d2155ea4b6b7" name="Changes" comment="2">
-      <change afterPath="$PROJECT_DIR$/src/basic/BasicJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="64d02c96-5eab-471b-b10c-d2155ea4b6b7" name="Changes" comment="2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +38,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="basic" />
       <recent name="thread.question" />
       <recent name="thread" />
     </key>
@@ -131,7 +129,7 @@
       <option name="presentableId" value="Default" />
       <updated>1667180074632</updated>
       <workItem from="1667180077181" duration="32705000" />
-      <workItem from="1667235535333" duration="2001000" />
+      <workItem from="1667235535333" duration="2162000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1667180208086</created>
@@ -161,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667235548686</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2">
+      <created>1667237703954</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667237703954</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
